@@ -22,6 +22,7 @@
       filter: blur(2.5px) saturate(120%);
       z-index: 0;
       mix-blend-mode: screen;
+      border-radius: 2rem;
     }
     .bg-car {
       top: 5%;
@@ -58,6 +59,7 @@
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
+    
 
     @keyframes fadeIn {
   from {
@@ -86,6 +88,10 @@
     scroll-behavior: smooth;
   }
   </style>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css" />
+
 </head>
 <body class="min-h-screen flex flex-col relative">
 
@@ -98,7 +104,7 @@
   <header class="glass fixed top-0 w-full z-50 p-4 flex justify-between items-center shadow-lg">
     <h1 class="text-2xl font-bold neon">Lavacar V8</h1>
     <nav class="space-x-6 text-sm uppercase tracking-wide">
-      <a href="/Home/inicio/home.html" class="hover:text-cyan-400 transition">Início</a>
+      <a href="/Home/inicio/home.html" class="hover:text-cyan-400 transition">Home</a>
       <a href="#agendamento" class="hover:text-cyan-400 transition">Agendamento</a>
       <a href="#contato" class="hover:text-cyan-400 transition">Contato</a>
       <a href="registro.html" class="hover:text-cyan-400 transition">Registrar</a>
@@ -163,7 +169,7 @@
         <input type="text" id="usuarioAgendamento" placeholder="Usuário cadastrado" class="w-full p-3 rounded bg-gray-800 text-white border border-gray-600" />
         <input type="text" placeholder="Seu nome" id="nome" class="w-full p-3 rounded bg-gray-800 text-white border border-gray-600" />
         <input type="tel" placeholder="Telefone" id="telefone" class="w-full p-3 rounded bg-gray-800 text-white border border-gray-600" />
-        <input type="datetime-local" id="datahora" class="w-full p-3 rounded bg-gray-800 text-white border border-gray-600" />
+        <input type="text" id="datahora" placeholder="Selecione data e hora" class="w-full p-3 rounded bg-gray-800 text-cyan-400 border border-cyan-600 neon focus:ring-2 focus:ring-cyan-500 transition duration-300" />
         <button type="submit" class="w-full p-3 rounded bg-cyan-500 text-black font-semibold hover:bg-cyan-400 transition">
           Confirmar Agendamento
         </button>
@@ -214,6 +220,28 @@
       document.getElementById("formAgendamento").reset();
     });
   </script>
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<script>
+  flatpickr("#datahora", {
+    enableTime: true,
+    dateFormat: "d/m/Y H:i",
+    time_24hr: true,
+    minDate: "today",
+    locale: {
+      firstDayOfWeek: 1,
+      weekdays: {
+        shorthand: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'],
+        longhand: ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'],
+      },
+      months: {
+        shorthand: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+        longhand: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+      },
+    }
+  });
+</script>
   
 </body>
 </html>
