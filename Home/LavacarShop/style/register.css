@@ -1,0 +1,37 @@
+/* Style da pagina registro */
+body {
+    background: linear-gradient(to bottom right, #0f0f0f, #1a1a1a);
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.neon {
+    color: #0ff;
+    text-shadow:
+        0 0 4px rgb(0, 119, 255),
+        0 0 8px rgb(0, 153, 255),
+        0 0 10px rgba(0, 119, 255, 0.667),
+        0 0 14px #0ff7;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 1s ease-out forwards;
+}

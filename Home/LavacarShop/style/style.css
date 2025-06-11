@@ -1,0 +1,88 @@
+body {
+    background: linear-gradient(to bottom right, #0f0f0f, #1a1a1a);
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Imagens de fundo estratégicas */
+.background-image {
+    position: fixed;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0.15;
+    filter: blur(2.5px) saturate(120%);
+    z-index: 0;
+    mix-blend-mode: screen;
+    border-radius: 2rem;
+}
+
+.bg-car {
+    top: 5%;
+    left: 3%;
+    width: 450px;
+    transform: rotate(-10deg);
+}
+
+.bg-bubbles {
+    bottom: 12%;
+    right: 6%;
+    width: 400px;
+    transform: rotate(15deg);
+}
+
+.bg-water {
+    bottom: 3%;
+    left: 15%;
+    width: 500px;
+    filter: blur(3px) saturate(110%);
+    opacity: 0.12;
+}
+
+/* Neon mais suave */
+.neon {
+    color: #0ff;
+    text-shadow:
+        0 0 4px rgb(0, 119, 255),
+        0 0 8px rgb(0, 153, 255),
+        0 0 10px rgba(0, 119, 255, 0.667),
+        0 0 14px #0ff7;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.delay-400 {
+    animation-delay: 0.4s;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
